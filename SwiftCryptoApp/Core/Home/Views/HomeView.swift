@@ -9,10 +9,22 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            // Background layer
+            Color.theme.background.ignoresSafeArea()
+            
+            // Content layer
+            VStack {
+                Text("Header")
+                Spacer(minLength: 0)
+            }
+        }
     }
 }
 
 #Preview {
-    HomeView()
+    NavigationView {
+        HomeView().navigationBarHidden(true)
+    }
+    
 }

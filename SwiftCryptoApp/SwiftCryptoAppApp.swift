@@ -2,7 +2,7 @@
 //  SwiftCryptoAppApp.swift
 //  SwiftCryptoApp
 //
-//  Created by Amila Manathunga on 2023-11-11.
+//  Created by Lalana Chamika on 2023-11-11.
 //
 
 import SwiftUI
@@ -11,7 +11,9 @@ import SwiftUI
 struct SwiftCryptoAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                HomeView().navigationBarHidden(true)
+            }
         }
     }
 }
