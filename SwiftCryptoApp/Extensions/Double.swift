@@ -10,9 +10,9 @@ import Foundation
 extension Double {
     
     
-    /// Converts a Double into 2-6 decimal comma seperated formatted currency
+    /// Converts a Double into 3-3 decimal comma seperated formatted currency
     ///```
-    /// Convert 1234.56 to $1,234.56
+    /// Convert 1234.56 to $1,234.560
     ///```
     private var currencyFormatter: NumberFormatter {
         let formatter = NumberFormatter()
@@ -21,8 +21,8 @@ extension Double {
         formatter.locale = .current
         formatter.currencyCode = "usd"
         formatter.currencySymbol = "$"
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 6
+        formatter.minimumFractionDigits = 3
+        formatter.maximumFractionDigits = 3
         return formatter
     }
     

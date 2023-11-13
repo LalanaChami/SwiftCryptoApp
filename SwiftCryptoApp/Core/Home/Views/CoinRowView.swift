@@ -50,19 +50,20 @@ extension CoinRowView {
     private var leftCol : some View {
         HStack (spacing: 0) {
             Text("\(coin.rank)")
-                .font(.headline)
+                .font(.subheadline)
                 .foregroundColor(Color.theme.accent)
                 .frame(minWidth: 30)
             Circle()
-                .frame(width: 50, height: 50)
+                .frame(width: 35, height: 35)
             VStack(alignment: .leading) {
                 Text(coin.symbol.uppercased())
-                    .font(.headline)
+                    .font(.subheadline)
+                    .bold()
                     .padding(.leading, 4)
                     .foregroundColor(Color.theme.accent)
 //                if !showHoldingsColumn {
                     Text(coin.name)
-                        .font(.subheadline)
+                    .font(.caption)
                         .padding(.leading, 4)
                         .foregroundColor(Color.theme.accent)
 //                }
@@ -74,16 +75,20 @@ extension CoinRowView {
     private var centerCol: some View {
         VStack(alignment: .trailing) {
             Text(coin.currentHoldingValue.asCurrencyWith6Decimal())
+                .font(.subheadline)
             Text((coin.currentHoldings ?? 0).numAsString())
+                .font(.subheadline)
         }
     }
     
     private var rightCol: some View {
         VStack (alignment: .trailing){
             Text(coin.currentPrice.asCurrencyWith6Decimal())
+                .font(.subheadline)
                 .bold()
                 .foregroundColor(Color.theme.accent)
             Text(coin.priceChange24H?.asPercentString() ?? "")
+                .font(.subheadline)
                 .foregroundColor(
                     (coin.priceChange24H ?? 0) >= 0 ? Color.theme.green : Color.theme.red
                 )
